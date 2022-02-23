@@ -132,7 +132,7 @@ def binary_search_iterartion(element, list):
     while lower <= upper:
         mid = lower + (upper - lower) // 2
         if list[mid] == element:
-            return element
+            return True
         if list[mid] < element:
             lower = mid
         if list[mid] > element:
@@ -142,12 +142,11 @@ def binary_search_iterartion(element, list):
 
 
 def main():
-    # f = open('numbers.txt', 'r')
-    # line = f.read()
-    # list = line.split(' ')
-    # list = [int(x) for x in list]
-    list = [int(x) for x in range(100000000)]
-    # # # Bubble sort algorithm
+    f = open('numbers.txt', 'r')
+    line = f.read()
+    list = line.split(' ')
+    list = [int(x) for x in list]
+    # # # # Bubble sort algorithm
     # start = time.time()
     # bubble_sort(list)
     # end = time.time()
@@ -162,18 +161,20 @@ def main():
     # merge_sort(list)
     # end = time.time()
     # print("The elapsed time is Merge sort " + str(end-start))
-    # # Quick sort not in place algorithm
+    # # # Quick sort not in place algorithm
     # start = time.time()
     # quick_sort(list)
     # end = time.time()
     # print("The elapsed time is Quick sort not-in-place " + str(end-start))
-    # # # Quick sort  in place algorithm
-    # start = time.time()
-    # classic_quick_sort(list)
-    # end = time.time()
-    # print("The elapsed time is Quick sort in-place " + str(end-start))
-    print(binary_search(2, list, 0, len(list)-1))
-    print(binary_search_iterartion(2, list))
+    # # # # Quick sort  in place algorithm
+    start = time.time()
+    classic_quick_sort(list)
+    end = time.time()
+    print("The elapsed time is Quick sort in-place " + str(end-start))
+    # Binary search
+    print(binary_search(100, list, 0, len(list)-1))
+    # Binary search iteration
+    print(binary_search_iterartion(100, list))
 
 
 if __name__ == '__main__':
