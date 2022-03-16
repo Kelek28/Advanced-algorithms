@@ -85,5 +85,5 @@ def infix2Postfix(infix):
     print("".join(output))
 
 
-infix2Postfix("(a+b)/(b+c)")
-infix2Postfix("((a+b)*((a+b)/b))")
+# infix2Postfix("(a+b)/(b+c)")
+# infix2Postfix("((a+b)*((a+b)/b))")
